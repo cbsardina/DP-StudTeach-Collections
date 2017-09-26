@@ -113,5 +113,28 @@ public class Main {
         patrickStudent.setGrade(1);
         students.add(patrickStudent);
 
+        ArrayList<Teacher> teachers = new ArrayList<>();
+
+        Teacher calvinTeacher = new Teacher();
+        calvinTeacher.setFirstName("Calvin");
+        calvinTeacher.setLastName("Webster");
+        calvinTeacher.setId(calvinTeacher.makeID(calvinTeacher.getLastName()));
+        calvinTeacher.setGrade(1);
+        teachers.add(calvinTeacher);
+
+        Teacher spencerTeacher = new Teacher();
+        spencerTeacher.setFirstName("Spencer");
+        spencerTeacher.setLastName("Oakes");
+        spencerTeacher.setId(spencerTeacher.makeID(spencerTeacher.getLastName()));
+        spencerTeacher.setGrade(1);
+        teachers.add(spencerTeacher);
+
+        Teacher andreaTeacher = new Teacher();
+        andreaTeacher.setFirstName("Andrea");
+        andreaTeacher.setLastName("Coaker");
+        andreaTeacher.setId(andreaTeacher.makeID(andreaTeacher.getLastName()));
+        andreaTeacher.setGrade(1);
+        teachers.add(andreaTeacher);
+
     }
 }
