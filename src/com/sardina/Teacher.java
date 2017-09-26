@@ -32,6 +32,14 @@ public class Teacher {
 
     public void setGrade(int grade) { this.grade = grade; }
 
+    @Override
+    public String toString() {
+        return "Teacher:[firstName: " + firstName + ", "
+                + "lastName: " + lastName + ", "
+                + "id: " + id + ", "
+                + "grade: " + grade + "]";
+    }
+
     //generate random student id's
     public String makeID(String lastName) {
         Random random = new Random();

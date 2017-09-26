@@ -1,6 +1,6 @@
 package com.sardina;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class Main {
 
@@ -43,12 +43,12 @@ public class Main {
         brandonStudent.setGrade(1);
         students.add(brandonStudent);
 
-        Student bruinStudent = new Student();
-        bruinStudent.setFirstName("Bruin");
-        bruinStudent.setLastName("Robinson");
-        bruinStudent.setId(bruinStudent.makeID(bruinStudent.getLastName()));
-        bruinStudent.setGrade(1);
-        students.add(bruinStudent);
+        Student philStudent = new Student();
+        philStudent.setFirstName("Phil");
+        philStudent.setLastName("D\'Elia");
+        philStudent.setId(philStudent.makeID(philStudent.getLastName()));
+        philStudent.setGrade(1);
+        students.add(philStudent);
 
         Student candaceStudent = new Student();
         candaceStudent.setFirstName("Candace");
@@ -122,12 +122,12 @@ public class Main {
         calvinTeacher.setGrade(1);
         teachers.add(calvinTeacher);
 
-        Teacher spencerTeacher = new Teacher();
-        spencerTeacher.setFirstName("Spencer");
-        spencerTeacher.setLastName("Oakes");
-        spencerTeacher.setId(spencerTeacher.makeID(spencerTeacher.getLastName()));
-        spencerTeacher.setGrade(1);
-        teachers.add(spencerTeacher);
+        Teacher bubbaTeacher = new Teacher();
+        bubbaTeacher.setFirstName("Bubba");
+        bubbaTeacher.setLastName("Lecheminant");
+        bubbaTeacher.setId(bubbaTeacher.makeID(bubbaTeacher.getLastName()));
+        bubbaTeacher.setGrade(1);
+        teachers.add(bubbaTeacher);
 
         Teacher andreaTeacher = new Teacher();
         andreaTeacher.setFirstName("Andrea");
@@ -135,6 +135,45 @@ public class Main {
         andreaTeacher.setId(andreaTeacher.makeID(andreaTeacher.getLastName()));
         andreaTeacher.setGrade(1);
         teachers.add(andreaTeacher);
+
+        Set<Student> studentSet1 = new HashSet<>();
+        Set<Student> studentSet2 = new HashSet<>();
+        Set<Student> studentSet3 = new HashSet<>();
+
+        for(int i =0; i <5; i++) {
+            studentSet1.add(students.get(i));
+            studentSet2.add(students.get(i+5));
+            studentSet3.add(students.get(i+10));
+        }
+
+        HashMap<Teacher, HashSet> hMap = new HashMap<>();
+
+        hMap.put(andreaTeacher, (HashSet) studentSet1);
+        hMap.put(bubbaTeacher, (HashSet) studentSet2);
+        hMap.put(calvinTeacher, (HashSet) studentSet3);
+
+        //for loop created 15 entries of the same 3 keys
+        System.out.println("---- 3 keys for the hashmap -----");
+        System.out.println(hMap.keySet());
+            System.out.println(" ");
+
+        //for loop created 15 entries of 3x5 map values
+        System.out.println("----- 15 student values -----");
+        System.out.println(hMap.values());
+            System.out.println(" ");
+
+        //3 keys with 5 values each
+        System.out.println("----- entrySet teachers w/students -----");
+        System.out.println(hMap.entrySet());
+            System.out.println(" ");
+
+        System.out.println("---- students by teacher -----");
+        System.out.println("Calvin: " + hMap.get(calvinTeacher));
+        System.out.println("Andrea: " + hMap.get(andreaTeacher));
+        System.out.println("Bubba: " + hMap.get(bubbaTeacher));
+
+
+
 
     }
 }
